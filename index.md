@@ -1,37 +1,67 @@
-## Welcome to GitHub Pages
+## AI好声音
 
-You can use the [editor on GitHub](https://github.com/voiceofAI/voiceofAI/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+> [DeeCamp2019](<https://deecamp.chuangxin.com/>)课题22 多模态AI音乐生成
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+多模态AI音乐生成是从语音、哼唱片段、视频内容等多模态数据源中获取音乐生成的基础要素，例如：动机（Motif）、风格、节奏等，再通过旋律生成、自动配器、智能混音等一系列模型生成最终的音乐作品。与传统的人工作曲相比，该种方式生成的音乐能够与多模态信息更加匹配，同时降低了用户在音乐使用和生成的难度，极大程度提升用户体验。
 
-### Markdown
+### 成员介绍
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#### 孙维纬
 
-```markdown
-Syntax highlighted code block
+- 山东大学 本科生
+- 专研 数据科学与大数据 方向
 
-# Header 1
-## Header 2
-### Header 3
+#### 张克驰
 
-- Bulleted
-- List
+- 北京大学 本科生
+- 曾参加北京大学黑客马拉松，希望能向大佬们学习
 
-1. Numbered
-2. List
+#### 晏俊杰
 
-**Bold** and _Italic_ and `Code` text
+- 复旦大学 研究生
+- 有着丰富的声音事件识别任务的竞赛经验
 
-[Link](url) and ![Image](src)
-```
+#### 周添一
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+- 华东师范大学 研究生
+- 曾参加过上海开发数据创新应用大赛（SODA）
 
-### Jekyll Themes
+#### 陈静静
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/voiceofAI/voiceofAI/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+- 江苏大学 研究生
+- 百度 Easy DeepLearning行业场景创新挑战赛 华中赛区前六名
 
-### Support or Contact
+#### 王成诚
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- 太原理工大学 本科生
+- 参加世界大学生超算竞赛ASC19，负责深度学习图像超分辨率赛题并进入决赛
+- 参加AI Crowd Unity Obstacle Tower Challenge强化学习挑战赛，排名前50，进入决赛
+- 在RoboMaster机甲大师挑战赛中训练识别敌方装甲板基于TK1的目标检测模型
+
+#### 许家鑫
+
+- 北京邮电大学 本科生
+- 积极参与校园创新大赛和雏燕计划
+
+#### 赵蕾
+
+- 国防科技大学 研究生
+- 曾获大学生数学竞赛国家级三等奖
+
+#### 管延伟
+
+- 北京航空航天大学 研究生
+- 曾获大学生研究性学习和创新性实验计划项目三等奖
+- 在毕业设计的实物展示中获得第二名的成绩，得到了校领导和老师的深刻肯定
+
+
+
+#### 以及我们可爱的设计师 赵雨秋~~~
+
+
+
+------
+
+### **7月20日~8月17日**
+
+### 最棒的DeeCamp 2019，我们一起实现！
