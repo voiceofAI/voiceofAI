@@ -1,5 +1,7 @@
 # magenta项目记录
 
+> by zkcpku
+
 - 环境安装：
 
   - 安装在win10下的ubuntu子系统中，已提前安装**anaconda**和**gcc**
@@ -41,6 +43,8 @@
     # 注意删去反斜杠
     ```
 
-  - 
+  - 剩下的可按照<https://github.com/voiceofAI/magenta/tree/master/magenta/models/melody_rnn>
 
-  
+- pipline分析
+
+
