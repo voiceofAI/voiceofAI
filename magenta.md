@@ -78,94 +78,57 @@
 - 训练命令：
 
   ```bash
-  DATA_DIR=input
-  HPARAMS_SET=score2perf_transformer_base
-  MODEL=transformer
-  PROBLEM=s2p_local
-  TRAIN_DIR=input/training/dir
-  
-  HPARAMS="label_smoothing=0.0,""max_length=0,"\
-  "max_target_seq_length=2048"
-  t2t_trainer --t2t_usr_dir=s2p  --data_dir=input   --hparams=${HPARAMS}  --hparams_set=${HPARAMS_SET}   --model=${MODEL}  --output_dir=${TRAIN_DIR}  --problem=${PROBLEM}   --train_steps=100
-  
-  
   # 或者
-  HPARAMS=\
-  "label_smoothing=0.0,"\
-  "max_length=0,"\
-  "max_target_seq_length=2048"
+  HPARAMS="label_smoothing=0.0,max_length=0,max_target_seq_length=2048"
   t2t_trainer --t2t_usr_dir=s2p  --data_dir=input   --hparams=${HPARAMS}  --hparams_set=score2perf_transformer_base   --model=transformer  --output_dir=input/training/dir  --problem=s2p_local   --train_steps=100
   ```
 
   > 参考<https://github.com/voiceofAI/tensor2tensor/blob/master/docs/new_model.md>
 
-```bash
-# 报错的大问题！！！！！！！！！！尚未处理
-Traceback (most recent call last):
-  File "/home/zkcpku/anaconda3/envs/magenta2/bin/t2t_trainer", line 10, in <module>
-    sys.exit(console_entry_point())
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/magenta/tensor2tensor/t2t_trainer.py", line 34, in console_entry_point
-    tf.app.run(main)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow/python/platform/app.py", line 40, in run
-    _run(main=main, argv=argv, flags_parser=_parse_flags_tolerate_undef)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/absl/app.py", line 300, in run
-    _run_main(main, args)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/absl/app.py", line 251, in _run_main
-    sys.exit(main(argv))
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/magenta/tensor2tensor/t2t_trainer.py", line 29, in main
-    t2t_trainer.main(argv)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensor2tensor/bin/t2t_trainer.py", line 401, in main
-    execute_schedule(exp)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensor2tensor/bin/t2t_trainer.py", line 356, in execute_schedule
-    getattr(exp, FLAGS.schedule)()
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensor2tensor/utils/trainer_lib.py", line 401, in continuous_train_and_eval
-    self._eval_spec)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow_estimator/python/estimator/training.py", line 473, in train_and_evaluate
-    return executor.run()
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow_estimator/python/estimator/training.py", line 613, in run
-    return self.run_local()
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow_estimator/python/estimator/training.py", line 714, in run_local
-    saving_listeners=saving_listeners)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow_estimator/python/estimator/estimator.py", line 367, in train
-    loss = self._train_model(input_fn, hooks, saving_listeners)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow_estimator/python/estimator/estimator.py", line 1158, in _train_model
-    return self._train_model_default(input_fn, hooks, saving_listeners)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow_estimator/python/estimator/estimator.py", line 1192, in _train_model_default
-    saving_listeners)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow_estimator/python/estimator/estimator.py", line 1484, in _train_with_estimator_spec
-    _, loss = mon_sess.run([estimator_spec.train_op, estimator_spec.loss])
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow/python/training/monitored_session.py", line 754, in run
-    run_metadata=run_metadata)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow/python/training/monitored_session.py", line 1252, in run
-    run_metadata=run_metadata)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow/python/training/monitored_session.py", line 1353, in run
-    raise six.reraise(*original_exc_info)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow/python/training/monitored_session.py", line 1338, in run
-    return self._sess.run(*args, **kwargs)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow/python/training/monitored_session.py", line 1411, in run
-    run_metadata=run_metadata)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow/python/training/monitored_session.py", line 1169, in run
-    return self._sess.run(*args, **kwargs)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 950, in run
-    run_metadata_ptr)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1173, in _run
-    feed_dict_tensor, options, run_metadata)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1350, in _do_run
-    run_metadata)
-  File "/home/zkcpku/anaconda3/envs/magenta2/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1370, in _do_call
-    raise type(e)(node_def, op, message)
+  ```bash
+	# 报错的大问题！！！！！！！！！！已经处理
 tensorflow.python.framework.errors_impl.InvalidArgumentError: input tensor must have non-zero dims. Found: [420, 0, 0, 3].
-```
+	# 解决方法：hparams没传进去，不建议用\来分行
+	```
 
 - <https://github.com/tensorflow/magenta/issues/1491>
 
 - 生成
 
   ```bash
+  # 交互式生成，在交互式窗口中填写前置midi文件名或留空（即随机生成）
+  HPARAMS_SET=score2perf_transformer_base
+  MODEL=transformer
+  PROBLEM=s2p_local
+  
   DECODE_HPARAMS="alpha=0,beam_size=1,extra_length=2048"
   
-  t2t_decoder  --t2t_usr_dir=s2p  --data_dir=input  --decode_hparams="${DECODE_HPARAMS}"   --decode_interactive   --hparams="sampling_method=random"   --hparams_set=score2perf_transformer_base   --model=transformer --problem=s2p_local   --output_dir=output
+  t2t_decoder   --t2t_usr_dir=s2p --data_dir=input   --decode_hparams="${DECODE_HPARAMS}"   --decode_interactive   --hparams="sampling_method=random"   --hparams_set=${HPARAMS_SET}   --model=${MODEL}   --problem=${PROBLEM}   --output_dir=input/training/dir
   
+  # 交互式命令
+  #INTERACTIVE MODE  num_samples=1  decode_length=2048
+  #  it=<input_type>     ('text' or 'image' or 'label', default: text)
+  #  ns=<num_samples>    (changes number of samples, default: 1)
+  #  dl=<decode_length>  (changes decode length, default: 100)
+  #  <target_prefix>                (decode)
+  #  q                   (quit)
+  #>little_init.midi
+  ```
+
+  ```bash
+  # 也可以用encode_file
+  HPARAMS_SET=score2perf_transformer_base
+  MODEL=transformer
+  PROBLEM=s2p_local
+  
+  DECODE_HPARAMS="alpha=0,beam_size=1,extra_length=2048"
+  
+  t2t_decoder   --t2t_usr_dir=s2p --data_dir=input   --decode_hparams="${DECODE_HPARAMS}"         --hparams_set=${HPARAMS_SET}   --model=${MODEL}   --problem=${PROBLEM}   --output_dir=input/training/dir    --decode_from_file=start.txt --decode_to_file=output.txt
+  
+  # start.txt里面：
+  # little_init.midi
+  # output.txt里面：
+  # /tmp/tmpn6h7w_u1_decode.mid
   ```
 
   
